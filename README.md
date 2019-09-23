@@ -32,3 +32,7 @@ Abra o navegador Firefox Azul e coloque: http://localhost/login
 ## Editar utilizando o VSCode
 - Abrir Visual Studio Code (azul)
 - Abrir a pasta c:\xampp\htdocs\login
+
+# Aula01 23/09/19
+    OBS.: Começou a Primavera
+    E criação do passo a passo
