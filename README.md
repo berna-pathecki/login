@@ -33,6 +33,12 @@ Abra o navegador Firefox Azul e coloque: http://localhost/login
 - Abrir Visual Studio Code (azul)
 - Abrir a pasta c:\xampp\htdocs\login
 
-# Aula01 23/09/19
+#TODAS AS AULAS
+
+## Aula02 24/09/2019
+Começo de aula - Abrir tudo
+
+
+## Aula01 23/09/19
     OBS.: Começou a Primavera
     E criação do passo a passo
