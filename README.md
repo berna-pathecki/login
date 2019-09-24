@@ -1,4 +1,22 @@
-zxamppzh## Habilitar o Proxy
+
+# login
+Sistema de Login em PHP e JavaScript
+
+# TODAS AS AULAS
+
+## Aula02 24/09/2019
+Começo de aula - Abrir tudo
+
+
+## Aula01 23/09/19
+    OBS.: Começou a Primavera
+    E criação do passo a passo
+
+
+
+
+
+# Habilitar o Proxy
 Tecla Windows - Abrir a janela Prompt de Comando
 Copie e cole a linha abaixo - selecione e pressione as teclas Ctrl C
 
@@ -7,8 +25,7 @@ Copie e cole a linha abaixo - selecione e pressione as teclas Ctrl C
 Pressione Enter
 
 
-# login
-Sistema de Login em PHP e JavaScript
+
 
 ## Clonar o repositório **login** na pasta **c>\xampp\htdocs**
 Tecla *Windows* - Abrir o **GitHub Desktop**.
@@ -33,12 +50,3 @@ Abra o navegador Firefox Azul e coloque: http://localhost/login
 - Abrir Visual Studio Code (azul)
 - Abrir a pasta c:\xampp\htdocs\login
 
-# TODAS AS AULAS
-
-## Aula02 24/09/2019
-Começo de aula - Abrir tudo
-
-
-## Aula01 23/09/19
-    OBS.: Começou a Primavera
-    E criação do passo a passo
