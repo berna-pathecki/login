@@ -10,7 +10,7 @@ Começo de aula - Abrir tudo
 layout Bootstrap para formulários
 - Formulário de login
 - Formulário de recuperação de senha
-- Formulário de cadastro de novos usuários
+- *~Formulário de cadastro de novos usuários~*
 
 
 ## Aula01 23/09/19
