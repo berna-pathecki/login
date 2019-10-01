@@ -16,12 +16,11 @@
     <title>Sistema de Login</title>
 
     <style>
-        #alerta, #caixaSenha, #caixaRegistro
-        {
+        #alerta,
+        #caixaSenha,
+        #caixaRegistro {
             display: none;
         }
-
-
     </style>
 
 </head>
@@ -41,7 +40,7 @@
 
 
         <section class="row">
-            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixalogin">
+            <div class="col-lg-4 offset-lg-4 bg-light rounded" id="caixaLogin">
                 <h2 class="text-center mt-2">
                     Entrar no Sistema
                 </h2>
@@ -62,7 +61,7 @@
                             </label>
 
                             <a href="#" class="float-right" id="btnEsqueci">
-                                Esqueçeu sua senha!
+                                Esqueceu sua senha!
                             </a>
 
                         </div>
@@ -168,7 +167,7 @@
                     <div class="form-group">
                         <p class="text-center">
                             Já Registrado?
-                            <a href="#" id="btnJaRegistrado">
+                            <a href="#" id="btnJaRegistrado2">
                                 Entrar por Aqui.
                             </a>
                         </p>
@@ -190,6 +189,31 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--
+        // Código JQuery para mostrar e ocultar os formulários
+        // HIDE é pra OCULTAR
+        // SHOW é pra MOSTRAR 
+        -->
+    <script>
+        $(function() {
+            $("#btnEsqueci").click(function() {
+                $("#caixaLogin").hide();
+                $("#caixaRegistro").hide();
+                $("#caixaSenha").show();
+            });
+            $("#btnRegistrarNovo").click(function() {
+                $("#caixaLogin").hide();
+                $("#caixaSenha").hide();
+                $("#caixaRegistro").show();
+            });
+            $("#btnJaRegistrado, #btnJaRegistrado2  ").click(function() {
+                $("#caixaLogin").show();
+                $("#caixaSenha").hide();
+                $("#caixaRegistro").hide();
+            });
+        });
+    </script>
+
 </body>
 
 </html>
