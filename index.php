@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="custom-control custom-checkbox mt-4">
+                        <div class="custom-control custom-checkbox mt-5">
                             <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input">
                             <label for="lembrar" class="custom-control-label">
                                 Lembrar Usuário
@@ -237,15 +237,47 @@
                 $("#caixaSenha").hide();
                 $("#caixaRegistro").hide();
             });
+
+
+            //Cadastro de novo usuario #btnRegistrar || #formRegistro
+            $("#btnRegistrar").click(function(e) {
+                if(document.querySelector("#formRegistro").checkValidity()) {
+                    e.preventDefault();//Não abrir outra página
+                    
+                    //Envio dos dados via Ajax
+                    $.ajax({
+                        url: 'recebe_dados.php',
+                         method: 'post', 
+                         data: $("#formRegistro").serialize()+'&action=cadastro',
+                         success: function (resposta) {
+                             $("#alerta").show();
+                             $(".resultado").html(resposta);
+                         }
+                    });
+                }
+                return true;
+            });
+
+            //Login #btnEntrar ||
+            $("#btnEntrar").click(function(e) {
+
+            });
+            
+            //Recuperação de senha #btnGerar ||
+            $("#btnGerar").click(function(e) {
+
+            });
+
+
         });
 
 
 
 
-            /*
-            * Translated default messages for the jQuery validation plugin.
-            * Locale: PT_BR
-            */
+        /*
+         * Translated default messages for the jQuery validation plugin.
+         * Locale: PT_BR
+         */
         jQuery.extend(jQuery.validator.messages, {
             required: "Este campo &eacute; requerido.",
             remote: "Por favor, corrija este campo.",
