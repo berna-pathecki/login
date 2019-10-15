@@ -97,3 +97,10 @@ Abra o navegador Firefox Azul e coloque: http://localhost/login
 - Abrir Visual Studio Code (azul)
 - Abrir a pasta c:\xampp\htdocs\login
 
+
+
+## Importar o banco de dados
+- Acessar no navegador http://localhost/phpmyadmin/
+- Clicar em importar
+- selecionar o arquivo, clicando em Browse ou escolha o arquivo
+- Abra o arquivo 127.0.0.1
