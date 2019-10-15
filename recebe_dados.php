@@ -1,6 +1,15 @@
     <?php
-    
+    //Conexão com o BD
+    require_once 'configBD.php';
 
+    function verificar_entrada($entrada)
+    {
+        // Filtrando a entrada.
+        $saida = htmlspecialchars($entrada);
+        $saida = stripslashes($saida);
+        $saida = trim($saida);
+        return $saida;//retorna a saída limpa
+    }
 
     if(isset($_POST['action']))
     {// Teste se existe a ação

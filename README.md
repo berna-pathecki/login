@@ -17,13 +17,8 @@ Sistema de Login em PHP e JavaScript
 
 # TODAS AS AULAS
 
-## Aula07 15/10/2019
--
--
--
-
-
-## Aula06 08/10/2019
+## Aula06 15/10/2019
+- Persistência de dados no banco de dados
 -
 -
 
@@ -32,7 +27,7 @@ Sistema de Login em PHP e JavaScript
 - umas paradas loca, nem entendi
 - Envio de dados via Ajax e BD
 
-s
+
 
 ## Aula05 04/10/2019
 - Envio de dados do FRONT-END para o BACK-END, métodos GET e POST
@@ -103,4 +98,5 @@ Abra o navegador Firefox Azul e coloque: http://localhost/login
 - Acessar no navegador http://localhost/phpmyadmin/
 - Clicar em importar
 - selecionar o arquivo, clicando em Browse ou escolha o arquivo
-- Abra o arquivo 127.0.0.1
+- Abra o arquivo 127.0.0.1 e clique em executar
+-
