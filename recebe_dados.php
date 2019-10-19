@@ -19,7 +19,7 @@ if (isset($_POST['action'])) {
         #echo "\n<\pre>";
         //Pegando dados do formulário.
         $nomeCompleto = verificar_entrada($_POST['nomeCompleto']);
-        $nomeUsuario = verificar_entrada($_POST['nomeUsuario']);
+        $nomeDoUsuario = verificar_entrada($_POST['nomeDoUsuario']);
         $emailUsuario = verificar_entrada($_POST['emailUsuario']);
         $senhaDoUsuario = verificar_entrada($_POST['senhaDoUsuario']);
         $senhaUsuarioConfirmar = verificar_entrada($_POST['senhaUsuarioConfirmar']);
@@ -30,7 +30,7 @@ if (isset($_POST['action'])) {
         $senhaConfirmarCod = sha1($senhaUsuarioConfirmar);
         //Teste de captura de dados.
         // echo "<p>Nome Completo: $nomeCompleto</p>";
-        // echo "<p>Nome do Usuário: $nomeUsuario</p>";
+        // echo "<p>Nome do Usuário: $nomeDoUsuario</p>";
         // echo "<p>E-mail: $emailUsuario</p>";
         // echo "<p>Senha codificada: $senhaCodificada</p>";
         // echo "<p>Data de criação: $dataCriado</p>";
@@ -39,35 +39,48 @@ if (isset($_POST['action'])) {
             exit();
         } else {
             //As senhas conferem, verificar se o usuário já existe no banco de dados.
-            $sql = $connect->prepare("SELECT nomeUsuario, emailUsuario FROM usuario WHERE nomeUsuario = ? OR emailUsuario = ?");
-            $sql->bind_param("ss", $nomeUsuario, $emailUsuario);
+            $sql = $connect->prepare("SELECT nomeDoUsuario, emailUsuario FROM usuario WHERE nomeDoUsuario = ? OR emailUsuario = ?");
+            $sql->bind_param("ss", $nomeDoUsuario, $emailUsuario);
             $sql->execute();
             $resultado = $sql->get_result();
             $linha = $resultado->fetch_array(MYSQLI_ASSOC);
 
             //Verificando a existência do usuário no banco de dados.
-            if ($linha['nomeUsuario'] == $nomeUsuario) {
+            if ($linha['nomeDoUsuario'] == $nomeDoUsuario) {
                 echo "<p class='text-danger'>Usuário indisponível, tente outro.</p>";
             } elseif ($linha['emailUsuario'] == $emailUsuario) {
                 echo "<p class='text-danger'>E-mail indisponível, tente outro.</p>";
             } else {
                 //Usuário pode ser cadastrado no banco de dados.
-                $sql = $connect->prepare("INSERT into usuario (nomeUsuario, nomeCompleto, emailUsuario, senhaDoUsuario, dataCriado) values(?, ?, ?, ?, ?)");
-                $sql->bind_param("sssss", $nomeUsuario, $nomeCompleto, $emailUsuario, $senhaCodificada, $dataCriado);
+                $sql = $connect->prepare("INSERT into usuario (nomeDoUsuario, nomeCompleto, emailUsuario, senhaDoUsuario, dataCriado) values(?, ?, ?, ?, ?)");
+                $sql->bind_param("sssss", $nomeDoUsuario, $nomeCompleto, $emailUsuario, $senhaCodificada, $dataCriado);
                 if ($sql->execute()) {
-                    echo "<p class='text-success'>Usuário cadastrado</p>";
+                    echo "<p class='text-success'>Usuário cadastrado.</p>";
                 } else {
-                    echo "<p class='text-danger'>Usuário não cadastrado</p>";
-                    echo "<p class='text-danger'>Algo deu errado</p>";
+                    echo "<p class='text-danger'>Usuário não cadastrado.</p>";
+                    echo "<p class='text-danger'>Algo deu errado.</p>";
                 }
             }
         }
     } else if ($_POST['action'] == 'login') {
         //Senão, teste se ação é login
-        echo "\n<p>login</p>";
-        echo "\n<pre>"; //Pre-formatar
-        print_r($_POST);
-        echo "\n<\pre>";
+        $nomeUsuario = verificar_entrada($_POST['nomeUsuario']);
+        $senhaUsuario = verificar_entrada($_POST['senhaUsuario']);
+        $senha = sha1($senhaUsuario);//Senha codificada
+
+        $sql = $connect->prepare("SELECT * FROM usuario WHERE senhaDoUsuario = ? AND nomeDoUsuario = ?");
+        $sql->bind_param("ss", $senha, $nomeUsuario);
+        $sql->execute();
+        $busca = $sql->fetch();
+        if($busca != null)
+        {
+            echo "Sucesso ao entrar no sistema.";
+        }else{
+            echo "<p class='text-danger'>Erro ao entrar no sitema.
+            <br>Nome de usuário ou senha inválidos.</p>";
+            exit();
+        }
+
     } else if ($_POST['action'] == 'senha') {
         //Senão, teste se ação é recuperar senha
         echo "\n<p>senha</p>";

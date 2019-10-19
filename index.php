@@ -112,7 +112,7 @@
                         <input type="text" name="nomeCompleto" id="nomeCompleto" class="form-control" placeholder="Nome Completo" required minlength="7">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" class="form-control" placeholder="Nome do Usuário" required minlength="5">
+                        <input type="text" name="nomeDoUsuario" id="nomeDoUsuario" class="form-control" placeholder="Nome do Usuário" required minlength="5">
                     </div>
                     <div class="form-group">
                         <input type="email" name="emailUsuario" id="emailUsuario" class="form-control" placeholder="E-Mail" required>
