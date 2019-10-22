@@ -74,7 +74,8 @@ if (isset($_POST['action'])) {
         $busca = $sql->fetch();
         if($busca != null)
         {
-            echo "Sucesso ao entrar no sistema.";
+            $_SESSION['nomeDoUsuario'] = $nomeDoUsuario;
+            echo "ok";
         }else{
             echo "<p class='text-danger'>Erro ao entrar no sitema.
             <br>Nome de usuário ou senha inválidos.</p>";
