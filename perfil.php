@@ -37,12 +37,12 @@ require_once "session.php";
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Perfil/NOMEUSUARIO\
+                        <?= $nomeDoUsuario ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
                         <a class="dropdown-item" href="#">Fotos</a>
-                        <a class="dropdown-item" href="#">Sair</a>
+                        <a class="dropdown-item" href="sair.php">Sair</a>
                     </div>
                 </li>
             </ul>
@@ -52,9 +52,9 @@ require_once "session.php";
     <div class="jumbotron jumbotron-fluid bg-secondary">
         <div class="container">
             <h1 class="display-4 text-center" style="color: Black;">Bem-Vind@</h1>
-            <h2 class="display-5 text-center rounded p-1 " style="color: Gainsboro ">NomeCompletoPessoa </h2>
-            <h2 class="text-center rounded p-1 " style="color: Gainsboro ">EmailUsuario: berna@berna.berna</h2>
-            <h2 class="text-center rounded p-1 " style="color: Gainsboro "> Registrado em: DataCriado </h2>
+            <h2 class="display-5 text-center rounded p-1 " style="background-color: Aqua ; color: black "> <?= $nomeCompleto ?> </h2>
+            <h2 class="text-center rounded p-1 " style="color: Gainsboro "> E-mail: <a href="mailto:<?= $email ?>"><?= $email ?></a></h2>
+            <h2 class="text-center rounded p-1 " style="color: Gainsboro ">Registrado em: <?= $dataCriado ?> </h2>
         </div>
     </div>
 
