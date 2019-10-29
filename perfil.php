@@ -18,6 +18,7 @@ require_once "session.php";
 </head>
 
 <body>
+
     <!-- Inicio da barra de NAV -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">|| B E R N A ||</a>
@@ -41,20 +42,34 @@ require_once "session.php";
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
-                        <a class="dropdown-item" href="#">Fotos</a>
+                        <a class="dropdown-item" href="fotos.php">Fotos</a>
                         <a class="dropdown-item" href="sair.php">Sair</a>
                     </div>
                 </li>
             </ul>
         </div>
+
+        </div>
+
     </nav>
+
     <!-- Fim da Barra de NAV -->
     <div class="jumbotron jumbotron-fluid bg-secondary">
         <div class="container">
             <h1 class="display-4 text-center" style="color: Black;">Bem-Vind@</h1>
             <h2 class="display-5 text-center rounded p-1 " style="background-color: Aqua ; color: black "> <?= $nomeCompleto ?> </h2>
-            <h2 class="text-center rounded p-1 " style="color: Gainsboro "> E-mail: <a href="mailto:<?= $email ?>"><?= $email ?></a></h2>
-            <h2 class="text-center rounded p-1 " style="color: Gainsboro ">Registrado em: <?= $dataCriado ?> </h2>
+
+            <div class="row">
+
+                <div class="col-4">
+                    <img src="<?= $perfilURL ?>" alt="" srcset="" width="300">
+                </div>
+                <div class="col-8">
+                    <h2 class="rounded p-2" style="color: Gainsboro "> E-mail: <a href="mailto:<?= $email ?>"><?= $email ?></a></h2>
+                    <h2 class="rounded p-2" style="color: Gainsboro ">Registrado em: <?= $dataCriado ?> </h2>
+                </div>
+
+            </div>
         </div>
     </div>
 

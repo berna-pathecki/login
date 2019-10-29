@@ -18,6 +18,8 @@ $dataCriado = $linha['dataCriado'];
 
 $dataCriado = date('d/m/Y', strtotime($dataCriado));
 
+$perfilURL = $linha['perfilURL'];
+
 }else{//se não, redirecionar p index 
     header("location:index.php");
 }

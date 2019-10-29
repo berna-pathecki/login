@@ -16,7 +16,8 @@
     <style>
         #alerta,
         #caixaSenha,
-        #caixaRegistro {
+        #caixaRegistro,
+        #novoForm {
             display: none;
         }
     </style>
@@ -41,17 +42,14 @@
                 </h2>
                 <form action="#" method="post" class="p-2" id="formLogin">
                     <div class="form-group">
-                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuario" class="form-control" required minlength="5"
-                        value="<?=isset($_COOKIE['nomeDoUsuario'])?$_COOKIE['nomeDoUsuario']:""?>">
+                        <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Nome de Usuario" class="form-control" required minlength="5" value="<?= isset($_COOKIE['nomeDoUsuario']) ? $_COOKIE['nomeDoUsuario'] : "" ?>">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Insira sua Senha" class="form-control" required minlength="8"
-                        value="<?=isset($_COOKIE['senhaDoUsuario'])?$_COOKIE['senhaDoUsuario']:""?>">
+                        <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Insira sua Senha" class="form-control" required minlength="8" value="<?= isset($_COOKIE['senhaDoUsuario']) ? $_COOKIE['senhaDoUsuario'] : "" ?>">
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox mt-5">
-                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" 
-                            <?=isset($_COOKIE['nomeDoUsuario'])?" checked":""?>>
+                            <input type="checkbox" name="lembrar" id="lembrar" class="custom-control-input" <?= isset($_COOKIE['nomeDoUsuario']) ? " checked" : "" ?>>
                             <label for="lembrar" class="custom-control-label">
                                 Lembrar Usuário
                             </label>
@@ -71,6 +69,15 @@
                             </a>
                         </p>
                     </div>
+
+                    <div class="form-group">
+                        <p class="text-center">
+                            <a href="#" id="btnMostrarNovo">
+                                Mostrar
+                            </a>
+                        </p>
+                    </div>
+
                 </form>
             </div>
         </section>
@@ -121,6 +128,9 @@
                         <input type="email" name="emailUsuario" id="emailUsuario" class="form-control" placeholder="E-Mail" required>
                     </div>
                     <div class="form-group">
+                        <input class="form-control" type="url" name="perfilURL" id="perfilURL" placeholder="Insira a URL de uma imagem">
+                    </div>
+                    <div class="form-group">
                         <input type="password" name="senhaDoUsuario" id="senhaDoUsuario" class="form-control" placeholder="Sua Senha" required minlength="8">
                     </div>
                     <div class="form-group">
@@ -145,15 +155,87 @@
                             </a>
                         </p>
                     </div>
+
                 </form>
             </div>
         </section>
         <!-- Final do formulário do cadastro de novos usuários -->
+
+        <!-- Inicio da atividade de "NOVO" formulário -->
+        <section class="row">
+            <div class="col-lg-4 offset-lg-4 bg-light " id="novoForm">
+                <h2 class="text-center mt-3">
+                    Novo Formulário
+                </h2>
+                <form action="#" method="post" class="p-2">
+                    <div class="form-group">
+                        <label for="">Nome Completo</label>
+                        <input class="form-control" type="text" name="nNomeCompleto" id="nNomeCompleto" placeholder="Insira o seu Nome Completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">E-Mail</label>
+                        <input class="form-control" type="email" name="nEmailUsuario" id="nEmailUsuario" placeholder="Insira seu e-mail">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Data de Nascimento</label>
+                        <input class="form-control" type="date" name="nDataNiver" id="nDataNiver">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Rede Social</label>
+                        <input class="form-control" type="url" name="nRedeSocial" id="nRedeSocial" placeholder="Insira o link da sua rede social">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Imagem de Perfil</label>
+                        <input class="form-control" type="url" name="nImgPerfil" id="nImgPerfil" placeholder="Insira a URL de uma imagem">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Selecione seu Estado</label>
+                        <select class="form-control" name="nSelectEstado" id="nSelectEstado">
+                            <option value=""></option>
+                            <option value="nPR">Paraná</option>
+                            <option value="nSC">Santa Catarina</option>
+                            <option value="nRS">Rio Grande do Sul</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Selecione sua cidade</label>
+                        <select class="form-control" name="nSelectCidade" id="nSelectCidade">
+                            <option value=""></option>
+                            <option value="nBrusque">Brusque</option>
+                            <option value="nGuabiruna">Guabiruba</option>
+                            <option value="nGaspar">Gaspar</option>
+                            <option value="nNovaTrento">Nova Trento</option>
+                            <option value="nBlumenau">Blumenau</option>
+                            <option value="nItajai">Itajaí</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="||Entrar||" name="btnConcluir" id="btnConcluir" class="btn btn-primary btn-block">
+
+                    <div class="form-group">
+                        <p class="text-center">
+                            Já Registrado?
+                            <a href="#" id="btnJaRegistrado3">
+                                Entrar por Aqui.
+                            </a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </section>
     </main>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
     <script>
@@ -185,11 +267,25 @@
                 $("#caixaSenha").hide();
                 $("#caixaRegistro").show();
             });
-            $("#btnJaRegistrado, #btnJaRegistrado2  ").click(function() {
+            $("#btnJaRegistrado, #btnJaRegistrado2, #btnJaRegistrado3  ").click(function() {
                 $("#caixaLogin").show();
                 $("#caixaSenha").hide();
                 $("#caixaRegistro").hide();
             });
+            $("#btnMostrarNovo").click(function() {
+                $("#novoForm").show();
+                $("#caixaLogin").hide();
+                $("#caixaSenha").hide();
+                $("#caixaRegistro").hide();
+            })
+            $("#btnConcluir").click(function() {
+                $("#novoForm").hide();
+                $("#caixaLogin").show();
+                $("#caixaSenha").hide();
+                $("#caixaRegistro").hide();
+            })
+
+
             //Cadastro de novo usuario #btnRegistrar || #formRegistro
             $("#btnRegistrar").click(function(e) {
                 if (document.querySelector("#formRegistro").checkValidity()) {
