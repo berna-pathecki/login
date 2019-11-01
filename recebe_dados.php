@@ -55,7 +55,7 @@ if (isset($_POST['action'])) {
             } else {
                 //Usuário pode ser cadastrado no banco de dados.
                 $sql = $connect->prepare("INSERT into usuario (nomeDoUsuario, nomeCompleto, emailUsuario, perfilURL, senhaDoUsuario, dataCriado) values(?, ?, ?, ?, ?, ?)");
-                $sql->bind_param("ssssss", $nomeDoUsuario, $nomeCompleto, $emailUsuario,$perfilURL, $senhaCodificada, $dataCriado);
+                $sql->bind_param("ssssss", $nomeDoUsuario, $nomeCompleto, $emailUsuario, $perfilURL, $senhaCodificada, $dataCriado);
                 if ($sql->execute()) {
                     echo "<p class='text-success'>Usuário cadastrado.</p>";
                 } else {

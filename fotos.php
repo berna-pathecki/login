@@ -1,8 +1,8 @@
 <!-- Aqui vai vim as fotos -->
 <?php
-// require_once "index.php";
-session_abort();
+    require_once "session.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
