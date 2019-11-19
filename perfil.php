@@ -1,8 +1,6 @@
-<?php
-require_once "session.php";
+<?php 
+    require_once "session.php";
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,61 +16,53 @@ require_once "session.php";
 </head>
 
 <body>
-
-    <!-- Inicio da barra de NAV -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">|| B E R N A ||</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <a class="navbar-brand" href="#">TNX Systems</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Início <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Destaques</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Preços</a>
-                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?= $nomeDoUsuario ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Sobre</a>
-                        <a class="dropdown-item" href="fotos.php">Fotos</a>
+                        <a class="dropdown-item" href="#">Fotos</a>
                         <a class="dropdown-item" href="sair.php">Sair</a>
                     </div>
                 </li>
             </ul>
         </div>
-
-        </div>
-
     </nav>
 
-    <!-- Fim da Barra de NAV -->
-    <div class="jumbotron jumbotron-fluid bg-secondary">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4 text-center" style="color: Black;">Bem-Vind@</h1>
-            <h2 class="display-5 text-center rounded p-1 " style="background-color: Aqua ; color: black "> <?= $nomeCompleto ?> </h2>
+            <h1 class="display-4">Boas vindas</h1>
 
-            <div class="row">
-
-                <div class="col-4">
-                    <img src="<?= $perfilURL ?>" alt="" srcset="" width="300">
-                </div>
-                <div class="col-8">
-                    <h2 class="rounded p-2" style="color: Gainsboro "> E-mail: <a href="mailto:<?= $email ?>"><?= $email ?></a></h2>
-                    <h2 class="rounded p-2" style="color: Gainsboro ">Registrado em: <?= $dataCriado ?> </h2>
-                </div>
-
-            </div>
+            <h2 class="display-2 text-center rounded p-1" 
+            style="background-color: deepPink; color: deepSkyBlue;">
+                <?= $nomeCompleto ?>
+            </h2>
+            <h2 class="text-center">
+                E-mail do Usuário: 
+                <a href="mailto:<?=$emailUsuario?>">
+                    <?=$emailUsuario?>
+                </a>
+            </h2>
+            <h2 class="text-center">
+                Registrado em: <?= $dataCriado  ?>
+            </h2>
         </div>
     </div>
-
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

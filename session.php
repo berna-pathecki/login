@@ -1,25 +1,26 @@
 <?php
 session_start();
-require_once"configBD.php";
+require_once "configBD.php";
 
-if(isset($_SESSION['nomeDoUsuario']))
-{//logado
+if(isset($_SESSION['nomeDoUsuario'])){
+    //Logado 
     $usuario = $_SESSION['nomeDoUsuario'];
-    $sql = $connect->prepare("SELECT * FROM usuario WHERE nomeDoUsuario = ?");
-$sql->bind_param("s", $usuario);
-$sql->execute();
-$resultado = $sql->get_result();
-$linha = $resultado->fetch_array(MYSQLI_ASSOC);
+    $sql = $connect->prepare("SELECT * FROM usuario 
+    WHERE nomeDoUsuario = ?");
+    $sql->bind_param("s",$usuario);
+    $sql->execute();
+    $resultado = $sql->get_result();
+    $linha = $resultado->fetch_array(MYSQLI_ASSOC);
 
-$nomeDoUsuario = $linha['nomeDoUsuario'];
-$nomeCompleto = $linha['nomeCompleto'];
-$email = $linha['emailUsuario'];
-$dataCriado = $linha['dataCriado'];
+    $nomeDoUsuario = $linha['nomeDoUsuario'];
+    $nomeCompleto = $linha['nomeCompleto'];
+    $emailUsuario = $linha['emailUsuario'];
+    $dataCriado = $linha['dataCriado'];
 
-$dataCriado = date('d/m/Y', strtotime($dataCriado));
+    //Conversão de data
+    $dataCriado = date('d/m/Y', strtotime($dataCriado));
 
-$perfilURL = $linha['perfilURL'];
-
-}else{//se não, redirecionar p index 
-    header("location:index.php");
+}else{
+    //Se não estiver logado, redirecionar para index
+    header("location: index.php");
 }
