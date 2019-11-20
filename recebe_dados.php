@@ -129,11 +129,13 @@ if(isset($_POST['action'])){
             $token = substr($palavra_secreta,0,10);
             //echo "Token: $token";
             $sql = $connect->prepare("UPDATE usuario SET token=?, 
-            tempoDeVida=DATE_ADD(NOW(), INTERVAL 1 MINUTE) WHERE
+            tempoDeVida=DATE_ADD(NOW(), INTERVAL 2 MINUTE) WHERE
             emailUsuario = ?");
             $sql->bind_param("ss", $token, $email);
             $sql->execute();
-            echo "Token no Banco de Dados!";
+            //echo "Token no Banco de Dados!";
+            $link = "<a href='gerarSenha.php?email=$email&token=$token'>Gerar Nova Senha</a>";
+            echo $link;
         }
         else{
             echo "E-mail não foi encontrado!";

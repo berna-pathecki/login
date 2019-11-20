@@ -1,6 +1,13 @@
 # login
 Sistema de Login em PHP e Javascript
 
+# aula11 - 19/11/2019
+-
+
+# aula10 - 18/11/2019
+- Criação de Token
+- Gerar nova senha criado
+
 # aula09 - 22/10/2019
   - Autenticação do usuário completa
   - Permissão de navegação através da SESSÃO

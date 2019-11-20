@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-        <a class="navbar-brand" href="#">TNX Systems</a>
+        <a class="navbar-brand" href="#">|| BERNA_PATHECKI ||</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,7 +49,7 @@
             <h1 class="display-4">Boas vindas</h1>
 
             <h2 class="display-2 text-center rounded p-1" 
-            style="background-color: deepPink; color: deepSkyBlue;">
+            style="background-color: black; color: deepPink;">
                 <?= $nomeCompleto ?>
             </h2>
             <h2 class="text-center">
