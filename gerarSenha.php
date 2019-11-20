@@ -7,7 +7,7 @@
         //Só para teste! Método GET
         //gerarSenha.php?token=1234567890&email=robert@gmail.com
 
-        $sql = $connect->prepare("SELECT * FROM usuario WHERE email=? AND token=? AND tempoDeVida > NOW()");
+        $sql = $connect->prepare("SELECT * FROM usuario WHERE emailUsuario=? AND token=? AND tempoDeVida > NOW()");
         $sql->bind_param("ss", $email, $token);
         $sql->execute();
 
